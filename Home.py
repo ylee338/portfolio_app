@@ -1,5 +1,4 @@
 import streamlit as st
-import pandas
 
 st.set_page_config(layout="wide")
 
@@ -10,29 +9,16 @@ with column_1:
 
 with column_2:
     st.title("Young Lee")
-    content = """I'm currently a George Mason University student graduating Fall 2023. I major in Information Technology
-     with a concentration in  cyber security. I've built this web app to showcase myself and my knowledge in 
-     programming. I have a great desire to learn new concepts and technologies to further my career and knowledge. 
-     On my free time I enjoy reading comics, discovering new music, and spending time with friends. Some of my hobbies 
-     are working out, playing basketball, and programming.  
+    content = """Hi there! My name is Young Lee, and I am a student at George Mason University with a passion for 
+    programming. I have honed my skills in python, html, CSS, and more. I am driven by my love for to always learn new 
+    skills and my desire to apply my skills to solve real world problems. I am always eager to take on new challenges 
+    and expand my skill set, and I thrive in collaborative environments where I can work with other talented 
+    professionals. When I'm not working, you can find me working out, reading comics, or playing team sports. My desire
+    to learn inspires me to think creatively and approach challenges from new angles. I believe that these experiences 
+    and interests help me to bring a unique perspective to my work and allow me to create truly innovative solutions for
+    my employers. Thank you for taking the time to visit my portfolio website! Please feel free to browse my work and 
+    get in touch if you have any questions.  
     """
     st.info(content)
-st.write("**Below you can find some of my personal projects I've created. Feel free to contact me!**")
 
-column_3, column_4 = st.columns(2)
 
-data_file = pandas.read_csv('data.csv', sep=";")
-
-with column_3:
-    for index, row in data_file[:10].iterrows():
-        st.header(row['title'])
-        st.write(row['description'])
-        st.image("images/" + row['image'])
-        st.write(f"[Source Code]({row['url']})")
-
-with column_4:
-    for index, row in data_file[10:].iterrows():
-        st.header(row['title'])
-        st.write(row['description'])
-        st.image("images/" + row['image'])
-        st.write(f"[Source Code]({row['url']})")
